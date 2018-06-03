@@ -4,8 +4,8 @@
 
 	$result = 0; // 0 - OK, 1 - Not Found, 2 - ID unspecified
 	$id = "undefined";
-	if (isset($_GET[’id’])) {
-		$id = mysql_real_escape_string($_GET[’id’]);
+	if (isset($_GET[id])) {
+		$id = mysql_real_escape_string($_GET[id]);
 
 		$sql_s = "SELECT * FROM users WHERE id=’$id’";
 		$rs = mysql_query($sql_s);
