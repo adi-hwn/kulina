@@ -1,5 +1,5 @@
 <?php 
-	header('Access-Control-Allow-Origin: *'); // REMOVE THIS!
+	//header('Access-Control-Allow-Origin: *'); // REMOVE THIS!
 	$link = mysql_connect('mysql4.gear.host', 'userdb5', 'udb5adm!n');
 	mysql_query("USE userdb5");
 

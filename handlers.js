@@ -11,7 +11,7 @@ $(document).ready(function(){
 			data: {"qty" : 20},
 			type: "GET",
 			success: function(response){
-				console.log(response);
+				//console.log(response);
 				respObj = JSON.parse(response);
 				if(respObj.result == 0){
 					editing = 1;
@@ -44,7 +44,7 @@ $(document).ready(function(){
 			data: {"id" : $("#txtId")[0].value},
 			type: "GET",
 			success: function(response){
-				console.log(response);
+				//console.log(response);
 				respObj = JSON.parse(response);
 				if(respObj.result == 0){
 					editing = 1;
@@ -68,7 +68,7 @@ $(document).ready(function(){
 
 	$("#cudForm").submit(function(){
 		event.preventDefault();
-		console.log($(this).serialize());
+		//console.log($(this).serialize());
 
 		var formSerialized = $(this).serializeArray();
 		var formObj = {};
@@ -77,7 +77,7 @@ $(document).ready(function(){
 				formObj[formSerialized[i].name] = formSerialized[i].value;
 			}
 		}
-		console.log(formObj);
+		//console.log(formObj);
 
 		if(formObj.method != "create" && editing == 0){
 			alert("No review selected. Fetch one using the appropriate ID");
@@ -97,6 +97,7 @@ $(document).ready(function(){
 					if(respObj.result != 0){
 						alert("Error when handling request");
 					}
+					$("#txtList").html(getReviewList());
 				}
 			});
 		}
