@@ -46,8 +46,10 @@ $(document).ready(function(){
 
 		var formSerialized = $(this).serializeArray();
 		var formObj = {};
-		for(var i = 0; i < formSerialized.length; i++){
-			formObj[formSerialized[i].name] = formSerialized[i].value;
+		if(formObj.method != "delete"){
+			for(var i = 0; i < formSerialized.length; i++){
+				formObj[formSerialized[i].name] = formSerialized[i].value;
+			}
 		}
 		console.log(formObj);
 
@@ -63,10 +65,10 @@ $(document).ready(function(){
 				type: "POST",
 				success: function(response){
 					respObj = JSON.parse(response);
-					console.log(respObj.result);
-					if(respObj.result == 0){
-						editing = 1;
-		    			$("#editText").html(EditingPrefix + respObj.id);
+			    	editing = 0;
+			    	$("#editText").html(NotEditingText);
+					if(respObj.result != 0){
+						alert("Error when handling request");
 					}
 				}
 			});
