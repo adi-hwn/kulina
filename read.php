@@ -3,6 +3,7 @@
 	$link = mysql_connect('mysql4.gear.host', 'userdb5', 'udb5adm!n');
 
 	$result = 0; // 0 - OK, 1 - Not Found, 2 - ID unspecified
+	$id = "undefined";
 	if (isset($_GET[’id’])) {
 		$id = mysql_real_escape_string($_GET[’id’]);
 
@@ -16,6 +17,6 @@
 		$result = 2;
 	}
 
-	echo "{result:'$result'}";
+	echo "{id:$id, result:$result}";
 	echo $rs;
 ?>
