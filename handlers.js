@@ -15,6 +15,7 @@ $(document).ready(function(){
 		       console.log(xhttp.responseText);
 		    }
 		};
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		xhttp.open("POST", "http://kulina.gearhostpreview.com/read.php", true);
 		xhttp.send("id=" + $("#txtId")[0].value);
 
