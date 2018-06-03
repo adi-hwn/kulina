@@ -1,6 +1,7 @@
 <?php 
 	header('Access-Control-Allow-Origin: *'); // REMOVE THIS!
 	$link = mysql_connect('mysql4.gear.host', 'userdb5', 'udb5adm!n');
+	mysql_query("USE userdb5");
 
 	$result = 0; // 0 - OK, 1 - Not Found, 2 - ID unspecified
 	$id = "undefined";
