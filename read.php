@@ -26,4 +26,6 @@
 		$json = json_encode($obj);
 		echo "{\"id\":\"$id\", \"result\":\"$result\", \"json\":$json}";
 	}
+
+	mysql_close($link);
 ?>

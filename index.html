@@ -20,18 +20,19 @@ Hello World!
 
 <p id="editText"> Nothing to see here </p>
 
-<form id="cud" action="server.php" method="post">
+<form id="cudForm">
+    <input id="btnStop" type="reset" value="Stop Editing"> <br>
 
-	<input type="radio" name="method" value="create"> Create
+	<input type="radio" name="method" value="create" checked> Create
     <input type="radio" name="method" value="update"> Update
     <input type="radio" name="method" value="delete"> Delete <br> <br>
 
-    Order ID: <input type="number" name="order_id" min="0" max="255"> <br>
-    Product ID: <input type="number" name="product_id" min="0" max="255"> <br>
-    User ID: <input type="number" name="user_id" min="0" max="255"> <br> <br>
+    Order ID: <input id="txtOrd" type="number" name="order_id" min="0" max="255"> <br>
+    Product ID: <input id="txtProd" type="number" name="product_id" min="0" max="255"> <br>
+    User ID: <input id="txtUser" type="number" name="user_id" min="0" max="255"> <br> <br>
 
-    Rating: <input type="number" name="user_id" min="1" max="5" step="any"> <br>
-    <textarea form_id="cud"> </textarea>
+    Rating: <input id="txtRate" type="number" name="rating" min="1" max="5" step="any"> <br>
+    <textarea id="txtRev" name="review" form_id="cud"> </textarea> <br>
 
     <input type="submit">
 </form>
