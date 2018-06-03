@@ -1,5 +1,6 @@
 <?php 
 	header('Access-Control-Allow-Origin: *'); // REMOVE THIS!
+	$link = mysql_connect('mysql4.gear.host', 'userdb5', 'udb5adm!n');
 
 	$result = 0; // 0 - OK, 1 - Not Found, 2 - ID unspecified
 	if (isset($_POST[’id’])) {
@@ -15,7 +16,6 @@
 		$result = 2;
 	}
 
-	$output = "{result:" + $result;
-	$output += "}";
-	echo $output;
+	echo "{result:'$result'}";
+	echo $rs;
 ?>
