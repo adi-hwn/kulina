@@ -8,7 +8,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="handlers.js"></script>
 
-Hello World!
+<form id="listForm">
+    List of editable review IDs (20 max): <p id="txtList"> </p> <br>
+    <input type="submit" value="Refresh"> <br>
+    Fetch one using the button below
+</form>
+
+<hr>
 
 <form id="readForm">
     Review ID: <input type="number" id="txtId" name="id" min="0" max="65535"> <br>
@@ -18,7 +24,7 @@ Hello World!
 
 <hr>
 
-<p id="editText"> Nothing to see here </p>
+<p id="txtEdit"> Nothing to see here </p>
 
 <form id="cudForm">
     <input id="btnStop" type="reset" value="Stop Editing"> <br>

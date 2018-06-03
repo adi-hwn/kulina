@@ -4,10 +4,36 @@ var editing = 0;
 var editingID = -1;
 
 $(document).ready(function(){
-    $("#editText").html(NotEditingText);
+
+	function getReviewList(){
+		$.ajax({
+			url: "http://kulina.gearhostpreview.com/list.php",
+			data: {"qty" : 20},
+			type: "GET",
+			success: function(response){
+				console.log(response);
+				respObj = JSON.parse(response);
+				if(respObj.result == 0){
+					editing = 1;
+					editingID = $("#txtId")[0].value;
+	    			$("#txtList").html(respObj.list_str);
+				} else {
+					alert("Error when generating ID list");
+				}
+			}
+		});
+	}
+	$("#txtList").html(getReviewList());
+
+	$("#listForm").submit(function(){
+		event.preventDefault();
+		$("#txtList").html(getReviewList());
+	});
+
+    $("#txtEdit").html(NotEditingText);
     $("#btnStop").click(function(){
     	editing = 0;
-    	$("#editText").html(NotEditingText);
+    	$("#txtEdit").html(NotEditingText);
     });
 
 	$("#readForm").submit(function(){
@@ -23,7 +49,7 @@ $(document).ready(function(){
 				if(respObj.result == 0){
 					editing = 1;
 					editingID = $("#txtId")[0].value;
-	    			$("#editText").html(EditingPrefix + respObj.id);
+	    			$("#txtEdit").html(EditingPrefix + respObj.id);
 
 	    			$("#txtOrd").val(respObj.json.order_id);
 	    			$("#txtProd").val(respObj.json.product_id);
@@ -66,7 +92,8 @@ $(document).ready(function(){
 				success: function(response){
 					respObj = JSON.parse(response);
 			    	editing = 0;
-			    	$("#editText").html(NotEditingText);
+			    	$("#txtEdit").html(NotEditingText);
+			    	$("#cudForm")[0].reset();
 					if(respObj.result != 0){
 						alert("Error when handling request");
 					}
