@@ -19,7 +19,7 @@
 	} else {
 		$list_str = "";
 		while ($row = mysql_fetch_array($rs, MYSQL_NUM)) {
-		    $list_str += "$row[0],";  
+		    $list_str = $list_str . "$row[0],";  
 		}
 		echo "{\"result\":\"$result\", \"list_str\":\"$list_str\"}";
 	}
