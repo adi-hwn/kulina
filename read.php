@@ -13,11 +13,17 @@
 		
 		if (mysql_num_rows($rs) == 0) {
 			$result = 1;
+		} else {
+			$obj = mysql_fetch_object($rs);
 		}
 	} else {
 		$result = 2;
 	}
 
-	echo "{id:$id, result:$result}";
-	echo $rs;
+	if($result != 0){
+		echo "{id:$id, result:$result}";
+	} else {
+		$json = json_encode($obj);
+		echo "{id:$id, result:$result, json:$json}";
+	}
 ?>
