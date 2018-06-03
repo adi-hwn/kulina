@@ -24,6 +24,6 @@
 		echo "{id:$id, result:$result}";
 	} else {
 		$json = json_encode($obj);
-		echo "{id:$id, result:$result, json:$json}";
+		echo "{\"id\":\"$id\", \"result\":\"$result\", json:$json}";
 	}
 ?>
