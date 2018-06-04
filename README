@@ -1,0 +1,29 @@
+Algoritma:
+
+Dalam subdirectory Algoritma, repo ini memuat jawaban untuk bagian Algoritma, dalam 3 program terpisah:
+1. prima.c      (Menampilkan bilangan prima sesuai input)
+2. fibonacci.c  (Menampilkan bilangan Fibonacci sesuai input)
+3. nol.c        (Menampilkan pola yang sesuai dengan PDF)
+
+Ketiga program ditulis dalam bahasa C, dan bisa di-compile menggunakan Makefile yang tersedia.
+"make" akan mem-compile ketiga program, dan program juga bisa dicompile secara individual dengan "make prima", dsb.
+
+
+REST endpoint:
+
+File-file dalam directory root adalah source code dari endpoint REST sederhana.
+Aplikasi dapat dijalankan dengan URL 
+
+    http://kulina.gearhostpreview.com/
+
+dan database dapat diakses langsung menggunakan 
+
+    host='mysql.gear.host', username='userdb5', password='udb5adm!n', nama database='userdb5'
+
+Script yang digunakan untuk membuat table user_review dapat dilihat dalam setup.sql.
+
+Implementasi endpoint dibagi dalam file-file berikut:
+- index.html -> tampilan laman web
+- handlers.js -> code (Javascript dan jQuery) yang menyambung frontend dengan PHP server.
+- create.php, read.php, update.php, delete.php -> script PHP, yang dipanggil oleh handlers.js untuk melayankan metode sesuai permintaan user.
+- list.php -> script yang menyediakan daftar ID yang ada di database.
