@@ -61,8 +61,8 @@ $(document).ready(function(){
 	    			$("#txtRate").val(respObj.json.rating);
 	    			$("#txtRev").val(respObj.json.review);
 
-	    			$("#txtCreate").val(respObj.json.created_at);
-	    			$("#txtUpdate").val(respObj.json.updated_at);
+	    			$("#txtCreate").html(respObj.json.created_at);
+	    			$("#txtUpdate").html(respObj.json.updated_at);
 				} else if(respObj.result == 1){
 					alert("Review not found");
 				} else if(respObj.result == 2){
