@@ -46,8 +46,8 @@ $(document).ready(function(){
 			data: {"id" : $("#txtId")[0].value},
 			type: "GET",
 			success: function(response){
-				//console.log(response);
 				respObj = JSON.parse(response);
+				console.log(respObj);
 				if(respObj.result == 0){
 					editing = 1;
 					editingID = $("#txtId")[0].value;
