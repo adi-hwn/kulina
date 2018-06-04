@@ -1,7 +1,0 @@
-Repo ini memuat jawaban untuk bagian Algoritma, dalam 3 program terpisah:
-1. prima.c      (Menampilkan bilangan prima sesuai input)
-2. fibonacci.c  (Menampilkan bilangan Fibonacci sesuai input)
-3. nol.c        (Menampilkan pola yang sesuai dengan PDF)
-
-Ketiga program ditulis dalam bahasa C, dan bisa di-compile menggunakan Makefile yang tersedia.
-"make" akan mem-compile ketiga program, dan program juga bisa dicompile secara individual dengan "make prima", dsb.

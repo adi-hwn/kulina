@@ -31,9 +31,11 @@ $(document).ready(function(){
 	});
 
     $("#txtEdit").html(NotEditingText);
+    $("#dates").hide();
     $("#btnStop").click(function(){
     	editing = 0;
     	$("#txtEdit").html(NotEditingText);
+    	$("#dates").hide();
     });
 
 	$("#readForm").submit(function(){
@@ -49,6 +51,7 @@ $(document).ready(function(){
 				if(respObj.result == 0){
 					editing = 1;
 					editingID = $("#txtId")[0].value;
+    				$("#dates").show();
 	    			$("#txtEdit").html(EditingPrefix + respObj.id);
 
 	    			$("#txtOrd").val(respObj.json.order_id);
@@ -57,6 +60,9 @@ $(document).ready(function(){
 
 	    			$("#txtRate").val(respObj.json.rating);
 	    			$("#txtRev").val(respObj.json.review);
+
+	    			$("#txtCreate").val(respObj.json.created_at);
+	    			$("#txtUpdate").val(respObj.json.updated_at);
 				} else if(respObj.result == 1){
 					alert("Review not found");
 				} else if(respObj.result == 2){
